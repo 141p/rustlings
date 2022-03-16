@@ -12,7 +12,7 @@ For a first-time Rust learner there are several other resources, I am currently 
 
 - [The Book](https://doc.rust-lang.org/book/index.html) - The most comprehensive resource for learning Rust, but a bit theoretical sometimes. You will be using this along with Rustlings!
 
-Other usefull resource to lear:
+Other usefull resource to learn:
 - [Rust By Example](https://doc.rust-lang.org/rust-by-example/index.html) - Learn Rust by solving little exercises! It's almost like `rustlings`, but online
 
 ## Getting Started
