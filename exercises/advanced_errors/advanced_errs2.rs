@@ -16,8 +16,6 @@
 // 4. Complete the partial implementation of `Display` for
 //    `ParseClimateError`.
 
-// I AM NOT DONE
-
 use std::error::Error;
 use std::fmt::{self, Display, Formatter};
 use std::num::{ParseFloatError, ParseIntError};
@@ -92,10 +90,16 @@ impl FromStr for Climate {
     // TODO: Complete this function by making it handle the missing error
     // cases.
     fn from_str(s: &str) -> Result<Self, Self::Err> {
+        if s.len() < 1 {
+            return Err(ParseClimateError::Empty)
+        };
         let v: Vec<_> = s.split(',').collect();
         let (city, year, temp) = match &v[..] {
             [city, year, temp] => (city.to_string(), year, temp),
             _ => return Err(ParseClimateError::BadLen),
+        };
+        if city.len() < 1 {
+            return Err(ParseClimateError::NoCity)
         };
         let year: u32 = year.parse()?;
         let temp: f32 = temp.parse()?;
